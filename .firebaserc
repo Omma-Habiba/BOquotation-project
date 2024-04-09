@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cotation-vehicule-de594": {
+      "hosting": {
+        "boquotation-project": [
+          "cotation-vehicule-de594"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cotation-vehicule-de594"
+  }
+}

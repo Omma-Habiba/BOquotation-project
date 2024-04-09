@@ -1,0 +1,53 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <header class="d-flex justify-content-between align-items-center mb-4 bg-primary text-white px-4"> 
+        <h1 class="font-weight-bold">Affichage des quotations en détail</h1>
+        <div>
+          <button class="btn btn-primary" (click)="setFilter('all')">Toutes</button>
+          <button class="btn btn-secondary" (click)="setFilter('pending')">En attente</button>
+          <button class="btn btn-success" (click)="setFilter('processed')">Traitées</button>
+        </div>
+      </header>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <h2 class="mb-3">Demandes</h2>
+      <ul *ngIf="displayedQuotes.length; else noQuotes" class="list-group">
+        <li
+          class="list-group-item list-group-item-action"
+          *ngFor="let quote of displayedQuotes"
+          (click)="selectQuote(quote)"
+        >
+          Description: {{ quote.description }}
+        </li>
+      </ul>
+      <ng-template #noQuotes>
+        <p>Aucune demande à afficher</p>
+      </ng-template>
+    </div>
+
+    <div class="col-md-8">
+      <div *ngIf="selectedQuote">
+        <h2>Détails de la demande</h2>
+        <p><strong>Description:</strong> {{ selectedQuote.description }}</p>
+        <p>
+          <strong>Quotation:</strong>
+          {{ selectedQuote.quotation || "En attente" }}
+        </p>
+        <img
+          [src]="selectedQuote.imageUrl"
+          alt="Image de la demande"
+          class="img-fluid img-preview"
+        />
+        <button class="btn btn-danger" (click)="deleteQuote(selectedQuote.id)">
+          Supprimer cette demande
+        </button>
+      </div>    
+    </div>
+  </div>
+</div>
