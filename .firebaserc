@@ -1,14 +1,14 @@
 {
+  "projects": {
+    "default": "projetangularefrei"
+  },
   "targets": {
-    "cotation-vehicule-de594": {
+    "projetangularefrei": {
       "hosting": {
         "boquotation-project": [
-          "cotation-vehicule-de594"
+          "boquotationomma"
         ]
       }
     }
-  },
-  "projects": {
-    "default": "cotation-vehicule-de594"
   }
 }

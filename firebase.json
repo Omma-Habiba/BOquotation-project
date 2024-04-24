@@ -1,7 +1,7 @@
 {
   "hosting": [
     {
-      "target": "foquotationefrei",
+      "target": "boquotation-project",
       "source": ".",
       "frameworksBackend": {
         "region": "europe-west1"

@@ -6,6 +6,7 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { getFirestore, provideFirestore} from '@angular/fire/firestore';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { getStorage, provideStorage } from '@angular/fire/storage';
+import { getAuth, provideAuth } from '@angular/fire/auth';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAHyp5DfrgbEiftp-gRZ9eRSyojmwahsvc",
@@ -21,6 +22,6 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes), importProvidersFrom([
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
-    provideFirestore(() => getFirestore())]), provideAnimationsAsync(), importProvidersFrom(provideFirebaseApp(() => initializeApp(firebaseConfig))), importProvidersFrom(provideFirestore(() => getFirestore())), importProvidersFrom(provideStorage(() => getStorage()))
+    provideFirestore(() => getFirestore())]), provideAnimationsAsync(), importProvidersFrom(provideFirebaseApp(() => initializeApp(firebaseConfig))), importProvidersFrom(provideFirestore(() => getFirestore())), importProvidersFrom(provideStorage(() => getStorage())), importProvidersFrom(provideFirebaseApp(() => initializeApp(firebaseConfig))), importProvidersFrom(provideAuth(() => getAuth())), importProvidersFrom(provideFirestore(() => getFirestore())), importProvidersFrom(provideStorage(() => getStorage()))
   ]  
 };
